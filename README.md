@@ -1,7 +1,18 @@
-# onboard-luisa-reis
+# Onboarding Luísa
 
-## Onboarding Luísa
+## Project's Description
 
-## Descrição do projeto
+This project it's about my onboarding process.
 
-Esse projeto se trata de um processo de Onboarding do Instituto Taqtile. 
+## Environment and tools
+
+- macOS Big Sur 11.4
+- Nodejs v14.17.1
+- NPM v6.14.13
+- Visual Studio Code v1.50.1
+
+## Steps to run and debug 
+
+Open the terminal and run: 
+`npm start`
+

@@ -1,18 +1,16 @@
 import React from 'react';
-import './App.css';
-import InputEmail from './components/inputEmail/InputEmail'
-import Button from './components/button/button'
-import Title from './components/title/title';
-import InputSenha from './components/inputSenha';
-
+import ButtonArea from './components/button/button-area';
+import TitleArea from './components/title/title-area';
+import InputArea from './components/input/input-area';
+import Wrapper from './components/wrapper/wrapper';
 function App() {
   return (
-    <div className="App">
-      <Title/>
-      <InputEmail/>
-      <InputSenha/>
-      <Button/>
-    </div>
+    <Wrapper>
+      <TitleArea text="Bem-vindo(a) à Taqtile!"/>
+      <InputArea name="E-mail" placeholder="Digite seu email "/>
+      <InputArea name="Senha" type="password" placeholder="Digite sua senha "/>
+      <ButtonArea title="entrar"/>
+    </Wrapper>
   );
 }
 

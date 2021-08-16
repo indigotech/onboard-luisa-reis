@@ -1,15 +1,19 @@
 import styled from "styled-components"
 
 export const Button = styled.button`
-  cursor: pointer;
-  border-radius: 10px;
-  border: none;
-  padding: 0 16px;
-  background: #6DC4C4;
-  color: white;
-  height: 56px;
   font-weight: bold;
-  margin-top: 32px;
-  font-size: 20px;
-  transition: background 0.2s;
-`;
+  margin: 5px;
+  margin-top: 25px;
+  border: none;
+  border-radius: 25px;
+  width: 100%;
+  height: 40px;
+  font-size: 18px;
+  color: black;
+  border: 0px;
+  cursor: pointer;
+
+  :hover{
+      background: #DAEEEF;
+  }
+`

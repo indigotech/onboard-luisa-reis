@@ -1,6 +1,5 @@
 import React from 'react';
-import Title from './Title';
-
+import Title from './title.component';
 interface TextProps {
   text: string;
 }

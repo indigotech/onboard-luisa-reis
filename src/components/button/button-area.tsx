@@ -6,8 +6,8 @@ interface ButtonProps {
   title: string;
 }
 
-const ButtonArea: React.FC<ButtonProps> = props => {
-  return <Button>{props.title}</Button>;
-};
-
-export default ButtonArea;
+export const ButtonArea: React.FC<ButtonProps> = (props) =>{
+  return (
+    <Button>{props.title}</Button>
+  );
+}

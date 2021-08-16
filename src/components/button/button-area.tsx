@@ -6,11 +6,13 @@ interface ButtonProps{
 }
 
 const ButtonArea: React.FC<ButtonProps> = (props) =>{
+  const HandleClick = (email:any)=> {
+
+  }
   return (
-    <Button>
-      {props.title}
-    </Button>
+  <Button >{props.title}</Button>
   );
-}  
+  }
+
 
 export default ButtonArea;

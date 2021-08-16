@@ -1,11 +1,10 @@
 import React from 'react';
-import Title from './title.component';
+import { TitleStyled } from './title.component';
+
 interface TextProps {
   text: string;
 }
 
-const TitleArea: React.FC<TextProps> = props => {
-  return <Title>{props.text}</Title>;
+export const TitleArea: React.FC<TextProps> = props => {
+  return <TitleStyled>{props.text}</TitleStyled>;
 };
-
-export default TitleArea;

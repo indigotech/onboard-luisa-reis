@@ -3,9 +3,10 @@ import { Formik, useFormik } from 'formik';
 import * as yup from 'yup';
 
 import { ButtonArea } from './components/button/button-area';
-import { Wrapper } from './components/wrapper/wrapper';
-import Title from './components/title/title';
-import FormField from './components/input/form';
+import { TitleArea } from './components/title/title';
+import { FormField } from './components/input/form';
+import { Error } from './components/input/error.component';
+import { WrapperStyled } from './components/wrapper/wrapper.style';
 
 const initialValues = {
   email: '',
@@ -33,16 +34,16 @@ function Form(onSubmit: any) {
   const passwordProps = formik.getFieldProps('password');
 
   return (
-    <Wrapper>
-      <Title text='Bem vindo(a) à Taqtile!' />
+    <WrapperStyled>
+      <TitleArea text='Bem vindo(a) à Taqtile!' />
       <form onSubmit={formik.handleSubmit}>
         <FormField label='email' type='email' placeholder='Email' {...emailProps} />
-        {formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
+        {formik.touched.email && formik.errors.email ? <Error>Deve inserir um email válido</Error> : null}
         <FormField label='password' type='password' placeholder='Senha' {...passwordProps} />
-        {formik.touched.password && formik.errors.password ? <div>{formik.errors.password}</div> : null}
+        {formik.touched.password && formik.errors.password ? <Error>{formik.errors.password}</Error> : null}
         <ButtonArea title='entrar' />
       </form>
-    </Wrapper>
+    </StyleWrapperStyled>
   );
 }
 

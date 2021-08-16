@@ -1,10 +1,7 @@
-import style from "styled-components"
+import styled from 'styled-components';
 
-const Title = style.h1`
-
-text-align: center;
-font-size: 40px;
-color: #208A91;
-
-`
-export default Title;
+export const TitleStyled = styled.h1`
+  text-align: center;
+  font-size: 40px;
+  color: #208a91;
+`;

@@ -1,5 +1,5 @@
 import React from "react";
-import Input from './Input'
+import Input from './input.component'
 
 
 function FormField ({name, ...rest}) {

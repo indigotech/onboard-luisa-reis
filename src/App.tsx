@@ -1,10 +1,11 @@
 import React from 'react';
 import ButtonArea from './components/button/button-area';
 import Title from './components/title/title';
-import Wrapper from './components/wrapper/wrapper';
+import Wrapper from './components/wrapper/wrapper.component';
 import {Formik, useFormik} from 'formik'
 import * as yup from 'yup';
 import FormField from './components/input/form'
+import Error from './components/input/error.component'
 
 const initialValues ={
   email: "",
@@ -45,7 +46,7 @@ function Form (onSubmit:any){
       {...emailProps}
       />
       {formik.touched.email && formik.errors.email ? (
-      <div>{formik.errors.email}</div>
+      <Error>Deve inserir um email válido</Error>
       ) : null}
     <FormField
       label="password"
@@ -54,7 +55,7 @@ function Form (onSubmit:any){
       {...passwordProps}
       />
       {formik.touched.password && formik.errors.password ? (
-        <div>{formik.errors.password}</div>
+        <Error>{formik.errors.password}</Error>
       ) : null}
       <ButtonArea title="entrar" />
       </form>

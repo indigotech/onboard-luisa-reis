@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import Button from "./button.component"
 
 interface ButtonProps{
-  title: string
+  title: string,
+  type: string,
+  
 }
 
 const ButtonArea: React.FC<ButtonProps> = (props) =>{

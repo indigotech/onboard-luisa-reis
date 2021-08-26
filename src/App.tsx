@@ -1,20 +1,14 @@
 import React from 'react'
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
-import Form from './components/pages/Form'
-import NovaPagina from './components/pages/nova-pagina'
-
+import Form from './components/pages/Login/Form'
+import UserList from './components/pages/UserList/users-list'
+import AddUser from './components/pages/AddUsers/add-user'
+import Router from './components/routes/Router'
 const App=()=>{
   return(
-    <Router>
-      <div className="App">
-        <Link to="/"></Link>
-        <Link to="/pag2"></Link>
-      <Switch>
-        <Route path="/" exact component={Form}/>
-        <Route path="/pag2" component={NovaPagina}/>
-      </Switch>
-      </div>
-    </Router>
+    <div>
+      <Router/>
+    </div>
+    
   )
 }
 

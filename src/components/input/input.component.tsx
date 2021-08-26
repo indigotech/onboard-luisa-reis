@@ -2,9 +2,8 @@ import style from "styled-components"
 
 const Input = style.input`
 
-background: #FFF3E0;
-border: none;
-border-radius: 10px;
+color: #777777
+border: 10px solid #777777
 color: black;
 align-itens: center;
 width: 100%;

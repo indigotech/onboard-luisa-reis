@@ -1,18 +1,21 @@
 import React,{useEffect} from 'react';
-import '../button/index.css'
-import Title from '../title/title';
-import Wrapper from '../wrapper/wrapper.component';
+import Title from '../../title/title';
+import Wrapper from '../../wrapper/wrapper.component';
 import {Formik, useFormik} from 'formik'
 import * as yup from 'yup';
-import FormField from '../input/form'
-import Error from '../input/error.component'
+import FormField from '../../input/form'
+import Error from '../../input/error.component'
 import {ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql, useMutation} from "@apollo/client";
 import { Token } from 'graphql';
+import UserList from '../UserList/users-list';
+import { History } from 'history';
+import { useHistory } from 'react-router-dom';
+import {goToUserList} from '../../routes/coordinator'
+
 
 const initialValues ={
   email: "",
   password: ""
-
 }
 
 const validationSchema = yup.object().shape({
@@ -30,6 +33,7 @@ const validationSchema = yup.object().shape({
 })
 
 function Form (){
+  const history: History = useHistory();
 
   const LOGIN = gql`
   mutation login($data: LoginInputType!){
@@ -46,6 +50,9 @@ function Form (){
 
 const HandleCompleted = (data:any)=>{
   console.log(data)
+  localStorage.setItem("token", data.login.token)
+  goToUserList(history);
+
 }
 
 const HandleError =(error:any)=>{
@@ -58,13 +65,9 @@ const handleSubmit=(data:any)=>{
   
   console.log(data)
   AddLogin({variables: {data}})
-  
-  useEffect(() => {
-  localStorage.setItem("email", JSON.stringify(emailProps))
-  localStorage.setItem("password", JSON.stringify(passwordProps))
-  })
 
-}
+  }
+
   const formik = useFormik({
     initialValues,
     validationSchema,
@@ -94,6 +97,7 @@ const handleSubmit=(data:any)=>{
     <Error>{formik.errors.password}</Error>
       ) : null}
       <button id="btnEntrar" disabled={Loading}> {Loading ? 'Carregando...': "Entrar"} </button>
+    
     </form>
     </Wrapper>
     )

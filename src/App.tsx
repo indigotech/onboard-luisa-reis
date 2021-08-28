@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, useFormik } from 'formik';
+import { useFormik } from 'formik';
 import * as yup from 'yup';
 
 import { ButtonArea } from './components/button/button-area';
@@ -43,7 +43,7 @@ function Form(onSubmit: any) {
         {formik.touched.password && formik.errors.password ? <Error>{formik.errors.password}</Error> : null}
         <ButtonArea title='entrar' />
       </form>
-    </StyleWrapperStyled>
+    </WrapperStyled>
   );
 }
 

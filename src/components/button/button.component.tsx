@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
 export const Button = styled.button`
   font-weight: bold;
@@ -13,7 +13,7 @@ export const Button = styled.button`
   border: 0px;
   cursor: pointer;
 
-  :hover{
-      background: #DAEEEF;
+  :hover {
+    background: #daeeef;
   }
-`
+`;

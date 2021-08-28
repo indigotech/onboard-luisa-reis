@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 import {
   useLazyQuery as useApolloLazyQuery,
@@ -7,4 +7,4 @@ import {
   FetchMoreOptions,
   OperationVariables,
   WatchQueryFetchPolicy,
-} from '@apollo/client';
+} from "@apollo/client";

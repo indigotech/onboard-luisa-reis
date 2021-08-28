@@ -1,17 +1,21 @@
-import { ApolloClient, createHttpLink, InMemoryCache, NormalizedCacheObject } from '@apollo/client';
-import { Service } from 'typedi';
+import {
+  ApolloClient,
+  createHttpLink,
+  InMemoryCache,
+  NormalizedCacheObject,
+} from "@apollo/client";
+import { Service } from "typedi";
 
 @Service()
-export class ApolloClientBuilderService{
-    build(url:string): ApolloClient<NormalizedCacheObject> {
-        const link = createHttpLink({uri: url + '/graphql'});
+export class ApolloClientBuilderService {
+  build(url: string): ApolloClient<NormalizedCacheObject> {
+    const link = createHttpLink({ uri: url + "/graphql" });
 
-        const client = new ApolloClient({
-            link,
-            cache: new InMemoryCache(),
-        });
+    const client = new ApolloClient({
+      link,
+      cache: new InMemoryCache(),
+    });
 
-        return client;
-    
-    }
+    return client;
+  }
 }

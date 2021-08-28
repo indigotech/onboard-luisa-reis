@@ -1,4 +1,4 @@
-import style from "styled-components"
+import style from "styled-components";
 
 const Button = style.button`
 
@@ -18,6 +18,6 @@ cursor: pointer;
     background: #DAEEEF;
 }
 
-`
+`;
 
 export default Button;

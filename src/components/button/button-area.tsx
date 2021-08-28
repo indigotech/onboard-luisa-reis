@@ -1,18 +1,13 @@
 import React, { Component } from "react";
-import Button from "./button.component"
+import Button from "./button.component";
 
-interface ButtonProps{
+interface ButtonProps {
   // title: string,
-  disabled: any
+  disabled: any;
 }
 
-const ButtonArea: React.FC<ButtonProps> = (props) =>{
-
-  
-  return (
-  <Button  >entrar</Button>
-  );
-  }
-
+const ButtonArea: React.FC<ButtonProps> = (props) => {
+  return <Button>entrar</Button>;
+};
 
 export default ButtonArea;

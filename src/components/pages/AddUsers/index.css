@@ -1,9 +1,7 @@
-#formAddUser{
-    margin-top: 30px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-
+#formAddUser {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-

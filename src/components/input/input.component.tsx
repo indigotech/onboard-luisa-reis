@@ -1,4 +1,4 @@
-import style from "styled-components"
+import style from "styled-components";
 
 const Input = style.input`
 
@@ -13,5 +13,5 @@ font-size: 20px;
 ::placeholder{
 font-size: 18px;
 }
-`
+`;
 export default Input;

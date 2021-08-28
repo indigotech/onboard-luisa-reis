@@ -1,4 +1,4 @@
-import style from "styled-components"
+import style from "styled-components";
 
 const FloatingBtn = style.button`
 
@@ -19,5 +19,5 @@ const FloatingBtn = style.button`
     height: 42px;
     font-size: 26px;
     text-align: center;
-`
+`;
 export default FloatingBtn;

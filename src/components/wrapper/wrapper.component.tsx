@@ -1,4 +1,4 @@
-import style from "styled-components"
+import style from "styled-components";
 
 const Wrapper = style.div`
   flex-direction: column;
@@ -7,6 +7,6 @@ const Wrapper = style.div`
   margin-top: 80px;
   width: 100%;
   
-`
+`;
 
 export default Wrapper;

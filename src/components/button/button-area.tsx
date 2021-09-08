@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { Component } from "react";
+import Button from "./Button"
 
-import { Button } from './Button';
-
-interface ButtonProps {
-  title: string;
+interface ButtonProps{
+  title: string
 }
 
-const ButtonArea: React.FC<ButtonProps> = props => {
-  return <Button>{props.title}</Button>;
-};
+const ButtonArea: React.FC<ButtonProps> = (props) =>{
+  return (
+    <Button>
+      {props.title}
+    </Button>
+  );
+}  
 
 export default ButtonArea;

@@ -1,12 +1,12 @@
-import React, { InputHTMLAttributes } from 'react';
-import Input from './Input';
-import InputTitle from './input-title';
+import React, { InputHTMLAttributes, Component } from "react"
+import Input from "./Input"
+import InputTitle from "./input-title"
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  name: string;
+interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
+  name: string
 }
 
-const InputArea: React.FC<InputProps> = props => {
+const InputArea: React.FC<InputProps> = (props) =>{
   return (
     <form>
       <label>
@@ -15,6 +15,6 @@ const InputArea: React.FC<InputProps> = props => {
       </label>
     </form>
   );
-};
+} 
 
 export default InputArea;

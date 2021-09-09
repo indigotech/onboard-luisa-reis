@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "baseUrl": "./src",
+    "target": "es2019",
     "lib": [
       "dom",
       "dom.iterable",
@@ -21,7 +22,7 @@
     "jsx": "preserve",
     "outDir": "./dist",
     "rootDir": "./src",
-    "experimentalDecorators": true,
+    "experimentalDecorators": true
   },
   "include": [
     "src"

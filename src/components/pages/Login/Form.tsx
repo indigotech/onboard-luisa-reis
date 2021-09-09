@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
 import Title from "../../title/title";
 import Wrapper from "../../wrapper/wrapper.component";
-import { Formik, useFormik } from "formik";
-import * as yup from "yup";
-import FormField from "../../input/form";
-import Error from "../../input/error.component";
+import { Validators } from "../../../atomic/obj.form";
+import { Form } from "../../../atomic/obj.form";
+import { TextField } from "../../../atomic/atm.text-field";
+
+// import { Formik, useFormik } from "formik";
+// import * as yup from "yup";
+// import FormField from "../../input/form";
+// import Error from "../../input/error.component";
 import {
   ApolloClient,
   InMemoryCache,
@@ -19,24 +23,58 @@ import { History } from "history";
 import { useHistory } from "react-router-dom";
 import { goToUserList } from "../../routes/coordinator";
 
-const initialValues = {
-  email: "",
-  password: "",
-};
+interface getTriggerMessages_getTriggerMessages {
+  __typename: "Trigger";
+  id: string;
+  title: string;
+  text: string;
+  active: boolean;
+}
 
-const validationSchema = yup.object().shape({
-  email: yup.string().email().required("Email obrigatório"),
-  password: yup
-    .string()
-    .required("Digite sua senha")
-    .matches(
-      /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$/,
-      "Senha deve conter pelo menos 7 caracteres, 1 digito e 1 letra"
-    ),
-});
+interface getTriggerMessages {
+  getTriggerMessages: getTriggerMessages_getTriggerMessages[];
+}
 
-function Form() {
-  const history: History = useHistory();
+interface FormData {
+  data: getTriggerMessages_getTriggerMessages;
+  error: any;
+  other: any;
+}
+interface TriggerMessageManagerProps {
+  initialData?: getTriggerMessages_getTriggerMessages;
+  onSubmit: (params: getTriggerMessages_getTriggerMessages) => void;
+  onCancel: () => void;
+}
+
+// const initialValues = {
+//   email: "",
+//   password: "",
+// };
+
+// const validationSchema = yup.object().shape({
+//   email: yup.string().email().required("Email obrigatório"),
+//   password: yup
+//     .string()
+//     .required("Digite sua senha")
+//     .matches(
+//       /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$/,
+//       "Senha deve conter pelo menos 7 caracteres, 1 digito e 1 letra"
+//     ),
+// });
+
+export const FormComponent: React.FC<TriggerMessageManagerProps> = ({
+  onCancel,
+  onSubmit,
+  initialData,
+}) => {
+  // const history: History = useHistory();
+  const handleSubmit = (formData: FormData) => {
+    if (Object.values(formData.error).length === 0) {
+      onSubmit({
+        ...formData.data,
+      });
+    }
+  };
 
   const LOGIN = gql`
     mutation login($data: LoginInputType!) {
@@ -51,39 +89,49 @@ function Form() {
     }
   `;
 
-  const HandleCompleted = (data: any) => {
-    console.log(data);
-    localStorage.setItem("token", data.login.token);
-    goToUserList(history);
-  };
+  // const HandleCompleted = (data: any) => {
+  //   console.log(data);
+  //   localStorage.setItem("token", data.login.token);
+  //   goToUserList(history);
+  // };
 
-  const HandleError = (error: any) => {
-    alert(`${error}`);
-  };
+  // const HandleError = (error: any) => {
+  //   alert(`${error}`);
+  // };
 
-  const [AddLogin, { data, loading: Loading, error }] = useMutation(LOGIN, {
-    onCompleted: HandleCompleted,
-    onError: HandleError,
-  });
+  // const [AddLogin, { data, loading: Loading, error }] = useMutation(LOGIN, {
+  //   onCompleted: HandleCompleted,
+  //   onError: HandleError,
+  // });
 
-  const handleSubmit = (data: any) => {
-    console.log(data);
-    AddLogin({ variables: { data } });
-  };
+  // const handleSubmit = (data: any) => {
+  //   console.log(data);
+  //   AddLogin({ variables: { data } });
+  // };
 
-  const formik = useFormik({
-    initialValues,
-    validationSchema,
-    onSubmit: handleSubmit,
-  });
-  const emailProps = formik.getFieldProps("email");
-  const passwordProps = formik.getFieldProps("password");
+  // const formik = useFormik({
+  //   initialValues,
+  //   validationSchema,
+  //   onSubmit: handleSubmit,
+  // });
+  // const emailProps = formik.getFieldProps("email");
+  // const passwordProps = formik.getFieldProps("password");
 
   return (
     <Wrapper>
       <Title text="Bem vindo(a) à Taqtile!" />
-      <form onSubmit={formik.handleSubmit}>
-        <FormField
+      <Form onSubmit={handleSubmit} >
+        <Form.Field
+          name="email"
+          label="Email"
+          validators={[Validators.Required("Campo obrigatório")]}
+          initialValue={initialData?.title}
+        >
+          <TextField type="normal" placeholder="Escreva seu comentário" />
+        </Form.Field>
+      </Form>
+      {/* <form onSubmit={formik.handleSubmit}> */}
+      {/* <FormField
           label="email"
           type="email"
           placeholder="Email"
@@ -100,14 +148,14 @@ function Form() {
         />
         {formik.touched.password && formik.errors.password ? (
           <Error>{formik.errors.password}</Error>
-        ) : null}
-        <button id="btnEntrar" disabled={Loading}>
+        ) : null} */}
+      {/* <button id="btnEntrar" disabled={Loading}>
           {" "}
           {Loading ? "Carregando..." : "Entrar"}{" "}
-        </button>
-      </form>
+        </button> */}
+      {/* </form> */}
     </Wrapper>
   );
-}
+};
 
-export default Form;
+// export default Form;

@@ -1,16 +1,23 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Form from "../pages/Login/Form";
+import  { FormComponent } from "../pages/Login/Form";
 import UserList from "../pages/UserList/users-list";
 import AddUser from "../pages/AddUsers/add-user";
 import UserDetails from "../pages/userDetails/user-details";
 
 const Router = () => {
+  const handleSubmit = ()=>{
+    
+  }
+  const handleCancel = ()=>{
+    
+  }
+
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path={"/"}>
-          <Form />
+          <FormComponent onSubmit={handleSubmit} onCancel={handleCancel}/>
         </Route>
         <Route exact path={"/userlist"} component={UserDetails}>
           <UserList />

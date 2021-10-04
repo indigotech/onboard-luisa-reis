@@ -1,16 +1,20 @@
 import React, { Component } from "react";
-import Button from "./Button"
+import Button from "./button.component"
 
 interface ButtonProps{
-  title: string
+  title: string,
+  type: string,
+  
 }
 
 const ButtonArea: React.FC<ButtonProps> = (props) =>{
+  const HandleClick = (email:any)=> {
+
+  }
   return (
-    <Button>
-      {props.title}
-    </Button>
+  <Button >{props.title}</Button>
   );
-}  
+  }
+
 
 export default ButtonArea;

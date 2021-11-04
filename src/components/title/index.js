@@ -1,3 +1,3 @@
-import Title from "./title-area"
+import Title from "./title";
 
-export default Title
+export default Title;

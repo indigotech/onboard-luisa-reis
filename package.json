@@ -3,30 +3,62 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.4.8",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
+    "@hookform/error-message": "^2.0.0",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "11.2.7",
     "@testing-library/user-event": "12.8.3",
     "@types/jest": "26.0.24",
+    "@types/lodash": "^4.14.172",
+    "@types/lodash.set": "^4.3.6",
     "@types/node": "12.20.18",
-    "@types/react-dom": "17.0.9",
+    "@types/react-router": "^5.1.16",
+    "@types/react-scroll": "^1.8.3",
+    "apollo-boost": "^0.4.9",
+    "axios": "^0.21.1",
+    "babel-preset-es2015": "^6.24.1",
+    "bootstrap": "^4.1.0",
+    "countries-api": "^2.0.1",
+    "formik": "^2.2.9",
+    "graphql": "^15.5.1",
+    "graphql-request": "^3.5.0",
+    "graphql-tag": "^2.12.5",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "node-sass": "^4.14.1",
+    "npm": "^7.22.0",
+    "prop-types": "^15.6.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-scripts": "2.1.8",
+    "react-flags": "^0.1.13",
+    "react-floating-action-button": "^1.0.5",
+    "react-hook-form": "^7.12.2",
+    "react-loading": "^2.0.3",
+    "react-masked-text": "^0.4.1",
+    "react-paginate": "^7.1.3",
+    "react-query": "^3.21.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.3.0",
+    "react-scroll": "^1.8.4",
+    "react-user-list": "^1.0.1",
+    "reflect-metadata": "^0.1.13",
+    "start": "^5.1.0",
     "styled-components": "5.3.0",
-    "typescript": "4.3.5",
-    "web-vitals": "1.1.2"
+    "test": "^0.6.0",
+    "typedi": "^0.10.0",
+    "web-vitals": "1.1.2",
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -41,6 +73,11 @@
     ]
   },
   "devDependencies": {
-    "@types/react": "^17.0.15"
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-paginate": "^7.1.1",
+    "@types/react-router-dom": "^5.1.8",
+    "@types/styled-components": "^5.1.12",
+    "typescript": "^4.3.5"
   }
 }
